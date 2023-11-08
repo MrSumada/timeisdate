@@ -45,6 +45,7 @@ function App() {
 
     } else {
       setMessage("Nope");
+      setBgColor("#94e1b0");
     }
 
     return () => {
@@ -61,8 +62,6 @@ function App() {
     <div className="App" ref={confettiContainer} style={{backgroundColor: bgColor}}>
       <h1>Is the Time also the Date?</h1>
       <h2>{message}</h2>
-      {/* <p>{date}</p>
-      <p>{time}</p> */}
     </div>
   );
 }
