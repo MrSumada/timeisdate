@@ -7,7 +7,6 @@ function App() {
   const [message, setMessage] = useState("...");
   const [bgColor, setBgColor] = useState("#94e1b0");
   const confettiContainer = useRef(null);
-  const [itsTime, setItsTime] = useState(false);
   const [date, setDate] = useState(10.26);
   const [time, setTime] = useState(10.27)
 
@@ -35,17 +34,16 @@ function App() {
     }, 1000)
 
     if (date === time) {
-      setItsTime(true)
       setMessage("Yup!")
       const interval = setInterval(() => {
         setBgColor("#" + (Math.floor((1 - Math.random()/100)*16777215)).toString(16))
         console.log(bgColor)
-      }, 3000)
+      }, 1000)
+      startConfetti();
 
       return () => { clearInterval(interval);}
 
     } else {
-      setItsTime(false);
       setMessage("Nope");
     }
 
@@ -53,13 +51,6 @@ function App() {
       clearInterval(timer)
     };
   })
-
-  useEffect(() => {
-    // Start confetti when your desired state is active
-    if (itsTime) {
-      startConfetti();
-    }
-  }, [itsTime]);
 
   useEffect(() => {
     setMessage("...")
