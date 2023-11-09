@@ -25,7 +25,7 @@ h2 {
   -webkit-text-stroke: 1px black;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding-bottom: 10vh;
-  padding-top: 25vw;
+  padding-top: 15vw;
 }
 
 @media screen and (max-width: 700px) {
